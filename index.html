@@ -10,29 +10,146 @@
 
 		
 		<!--	STYLE[S]	-->
-		<link rel="stylesheet" type="text/css" media="all" href="simplFlickrSlidr/libs/nivoSlider/nivo-slider.css" />
-		<link rel="stylesheet" type="text/css" media="all" href="simplFlickrSlidr/libs/nivoSlider/themes/default/default.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="assets/nivoSlider/nivo-slider.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="assets/nivoSlider/themes/default/default.css" />
+		<style type="text/css">
+			
+			/* 
+			 * 
+			 * simpleFlickrSlidr styles (for this demo)
+			 * 
+			 */
+			#simplFlickrSlidr,
+			#simplFlickrSlidr > div
+			{
+				width:612px;
+				height:612px;
+			}
+			
+			#simplFlickrSlidr
+			{
+				float:left;
+				background:url( 'assets/loader.gif' ) center no-repeat;
+			}
+			
+			
+			/* 
+			 * 
+			 * Page styles
+			 * 
+			 */
+			
+			body
+			{
+				font-family:helvetica,arial,sans-serif;
+				font-size:12px;
+				line-height:1.6em;
+			}
+			
+			a:link,
+			a:visited
+			{
+				color:inherit;
+				text-decoration:none;
+				border-bottom:1px dashed;
+			}
+			a:hover
+			{
+				
+				color: #ff0080;
+				
+			}
+			
+			h1 {
+				text-align:center;
+				font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+				font-size: 25px;
+				font-weight: 300;
+				margin-bottom:15px;
+				margin-top:60px;
+			}
+			h1 strong {
+				font-family: 'HelveticaNeue-Bold', 'Helvetica Neue Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+				font-size: 25px;
+				font-weight: 300;
+			}
+			h2 {
+				text-align:center;
+				font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+				font-size: 15px;
+				font-weight: 200;
+				font-style:italic;
+				color:#afafaf;
+				margin-bottom:60px;
+			}
+			h3 {
+				font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+				font-size: 15px;
+				margin-bottom:15px;
+			}
+			
+			code
+			{
+				white-space:pre;
+				display:block;
+				border:1px dashed #ccc;
+				background:#f5f5f5;
+				color:#777;
+				padding:5px;
+				overflow:scroll;
+				height:90px;
+			}
+			
+			#wrapper
+			{
+				width: 1200px;
+				margin: auto;
+			}
+			
+			#content
+			{
+				float:right;
+				width:520px;
+				height:562px;
+				border:1px solid #ccc;
+				background:#f0f0f0;
+				padding:25px;
+			}
+			
+			#footer
+			{
+				clear:both;
+				text-align:center;
+				padding-top:100px;
+				padding-bottom:60px;
+				font-size:10px;
+				color:#444;
+			}
+			
+			
+		
+		</style>
 		
 		<!-- JAVASCRIPT[S] -->
-		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
-		<script type="text/javascript">
-			google.load("jquery", "1.4.4");
-		</script>
-		<script type="text/javascript" src="simplFlickrSlidr/jquery.simplFlickrSlidr.js"></script>
-		<script type="text/javascript" src="simplFlickrSlidr/libs/nivoSlider/jquery.nivo.slider.pack.js"></script>
+		<script type="text/javascript" src="assets/jquery.js"></script>
+		<script type="text/javascript" src="assets/simplFlickrSlidr/jquery.simplFlickrSlidr.js"></script>
+		<script type="text/javascript" src="assets/nivoSlider/jquery.nivo.slider.pack.js"></script>
 		<script type="text/javascript">
 		
 			$(function() {
 			
 				$( '#simplFlickrSlidr' ).simplFlickrSlidr( 
 				
+					//	simplFlickrSlidr options
 					{
-						key: '8670d8a29e395490af7f429af2c4e4b1',
-						setID: '72157626928765136',
-						height: 500,
-						width: 500
+						api_key		: '8670d8a29e395490af7f429af2c4e4b1',
+						object_id	: '72157626928765136'
 					},
-					{}
+					
+					//	nivoSlider options
+					{
+						controlNav: false
+					}
 					
 				);
 			
@@ -43,8 +160,62 @@
 	</head>
 	<body>
 	
-		<div id="simplFlickrSlidr" class="theme-default"></div>
-	
+		<h1><strong>simplFlickrSlidr :</strong> <em>client friendly <a href="">NivoSlider</a> without a CMS</em></h1>
+		<h2>(well, not really, it's all controlled by Flickr. Your client knows how to use that, right?)</h2>
+		
+		<div id="wrapper">
+		
+			<div id="simplFlickrSlidr" class="theme-default"></div>
+			
+			<div id="content">
+			
+				<h3 style="margin-top:0;">What is simplFlickrSlidr?</h3>
+				<p>
+					This plugin is a tool which writes the markup for a nivoSlider based on the contents of a Flickr photoset or gallery.
+					All you supply is your Flickr API key and the ID of the photoset or gallery (and choose which method you're using) and
+					let the plugin take over.
+				</p>
+				<p>
+					A friend of mine needed to create a slider for a client's website which they could control without having to create an
+					unnecessary CMS. He also couldn't find a decent plugin which wasn't bloated with silly features.
+				</p>
+				<p>
+					I <strong>love</strong> the nivoSlider, it's lightweight and has a handful of elegant features, it's also massively customisable.
+					I figured, why re-invent the wheel but instead build something which generates the HTML based on a dynamic feed. <em>Et Voila.</em>
+				</p>
+				
+				<h3>How do I use it?</h3>
+				<p>
+					Include the source files into your head (remembering to include the nivoSlider plugin) then call the simplFlickrSlidr() method on
+					the container object you want to turn into a beautiful slider.
+				</p>
+<code>&lt;script type="text/javascript" src="jquery.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="simplFlickrSlidr/jquery.simplFlickrSlidr.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="nivoSlider/jquery.nivo.slider.pack.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+  $(function() {
+    $( '#simplFlickrSlidr' ).simplFlickrSlidr();
+  });
+&lt;/script&gt;
+&lt;div id="simplFlickrSlidr"&gt;&lt;/div&gt;</code>
+				
+				<h3>How do I get it?</h3>
+				<p>
+					<a href="#">Download the latest stable release from GitHub</a>
+				</p>
+				
+				<h3>I want to extend it</h3>
+				<p>
+					<a href="#">Fork the project on GitHub</a> and send me a pull request.
+				</p>
+			
+			</div>
+			
+		</div>
+		
+		<p id="footer">
+			&copy; 2011 <a href="http://hellopablo.co.uk">HelloPablo</a> / <a href="http://shedcollective.org">ShedCollective</a>
+		</p>
 	</body>
 
 </html>
