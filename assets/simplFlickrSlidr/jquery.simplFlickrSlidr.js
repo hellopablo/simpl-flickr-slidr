@@ -1,12 +1,12 @@
 /*global window,document,jQuery */
 
 /*!
-* simplFlickrSlidr: a jQuery Plugin
-* @author: Trevor Morris (trovster)
-* @url: http://www.trovster.com/lab/code/plugins/jquery.simplFlickrSlidr.js
-* @documentation: http://www.trovster.com/lab/plugins/simplFlickrSlidr/
-* @published: 11/09/2008
-* @updated: 26/02/2011
+* simplFlickrSlidr : client friendly NivoSlider without a CMS
+* @author: Pablo de la Peña (hellopablo)
+* @url: http://jquery.hellopablo.co.uk/simplFlickrSlidr/assets/jquery.simplFlickrSlidr.js
+* @documentation: http://jquery.hellopablo.co.uk/simplFlickrSlidr/
+* @published: 14/09/2011
+* @updated: 14/09/2011
 * @license Creative Commons Attribution Non-Commercial Share Alike 3.0 Licence
 *		   http://creativecommons.org/licenses/by-nc-sa/3.0/
 */
@@ -130,8 +130,6 @@ if(typeof jQuery != 'undefined') {
 						
 						break;
 					}
-					
-					//	Parse the photos into markup
 				});
 			}
 		});
