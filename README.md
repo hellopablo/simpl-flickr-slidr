@@ -2,4 +2,4 @@
 
 A client friendly NivoSlider without a CMS.
 
-[Demo & Docs](http://hellopablo.github.io/simple-flickr-slidr)
+[Demo & Docs](http://hellopablo.github.io/simpl-flickr-slidr)
